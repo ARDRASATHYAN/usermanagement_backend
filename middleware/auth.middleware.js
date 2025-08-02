@@ -7,9 +7,9 @@ exports.authenticate = (req, res, next) => {
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       if (err.name === 'TokenExpiredError') {
-        return res.status(401).json({ message: 'Access token expired' }); // ✅ triggers refresh
+        return res.status(401).json({ message: 'Access token expired' }); 
       }
-      return res.status(403).json({ message: 'Invalid token' }); // Invalid signature, etc.
+      return res.status(403).json({ message: 'Invalid token' }); 
     }
 
     req.userId = decoded.userId;

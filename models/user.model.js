@@ -8,8 +8,8 @@ const User = sequelize.define('User', {
   password: DataTypes.STRING,
   profileImage: DataTypes.STRING,
   role: {
-    type: DataTypes.STRING, // ✅ THIS WAS MISSING
-    defaultValue: 'user',   // Optional default role
+    type: DataTypes.STRING, 
+    defaultValue: 'user',  
   },
   isVerified: { type: DataTypes.BOOLEAN, defaultValue: false },
 refreshToken: {

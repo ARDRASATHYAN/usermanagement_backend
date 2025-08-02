@@ -114,7 +114,7 @@ exports.refreshToken = async (req, res) => {
     jwt.verify(token, process.env.JWT_REFRESH_SECRET);
 
     const newAccessToken = generateAccessToken(user.id);
-    return res.json({ accessToken: newAccessToken }); // only access token
+    return res.json({ accessToken: newAccessToken });
   } catch (err) {
     console.error('Refresh failed:', err.message);
     return res.status(403).json({ message: 'Invalid or expired refresh token' });
@@ -124,10 +124,10 @@ exports.refreshToken = async (req, res) => {
 
 
 
-// Add at the top
 
 
-// ✅ FORGOT PASSWORD - send reset email
+
+
 exports.forgotPassword = async (req, res) => {
   const { email } = req.body;
 
@@ -166,7 +166,7 @@ exports.forgotPassword = async (req, res) => {
   }
 };
 
-// ✅ RESET PASSWORD - update in DB
+
 exports.resetPassword = async (req, res) => {
   const { token } = req.params;
   const { password } = req.body;

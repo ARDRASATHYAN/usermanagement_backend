@@ -1,4 +1,4 @@
-const fs = require('fs'); // ✅ REQUIRED
+const fs = require('fs');
 const multer = require('multer');
 const path = require('path');
 
@@ -8,7 +8,7 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadDir), // ✅ use resolved path
+  destination: (req, file, cb) => cb(null, uploadDir), 
   filename: (req, file, cb) =>
     cb(null, `${Date.now()}-${file.originalname}`)
 });

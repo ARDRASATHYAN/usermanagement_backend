@@ -6,9 +6,9 @@ const { Op } = require('sequelize');
 
 exports.getAllUsers = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;       // Default page = 1
-    const limit = parseInt(req.query.limit) || 10;    // Default limit = 10
-    const searchTerm = req.query.searchTerm || '';    // Default: no filter
+    const page = parseInt(req.query.page) || 1;      
+    const limit = parseInt(req.query.limit) || 10;    
+    const searchTerm = req.query.searchTerm || '';    
     const offset = (page - 1) * limit;
 
     const whereClause = searchTerm
